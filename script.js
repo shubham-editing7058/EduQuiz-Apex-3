@@ -39,7 +39,7 @@ class EduQuiz {
         
         
         this.localQuestions = {
-            coding: [
+            programming: [
                 {
                     question: "What does HTML stand for?",
                     options: ["Hyper Text Markup Language", "High Tech Modern Language", "Home Tool Markup Language", "Hyperlink Text Management Language"],
@@ -353,7 +353,7 @@ class EduQuiz {
         try {
             
             const categoryMapping = {
-                'coding': 18, 
+                'programming': 18, 
                 'math': 19,   
                 'science': 17, 
                 'general': 9   
@@ -410,7 +410,7 @@ class EduQuiz {
         
         const categoryDisplay = document.getElementById('category-display');
         const categoryNames = {
-            'coding': '💻 Coding Quiz',
+            'programming': '💻 Programming Quiz',
             'math': '🔢 Mathematics Quiz',
             'science': '🔬 Science Quiz',
             'general': '🌍 General Knowledge Quiz'
@@ -508,11 +508,7 @@ class EduQuiz {
         this.nextBtn.focus();
         
         
-        setTimeout(() => {
-            if (!this.quizCompleted) {
-                this.nextQuestion();
-            }
-        }, 2000);
+        
     }
     
     showFeedback(message, type) {
