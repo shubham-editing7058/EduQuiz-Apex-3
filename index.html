@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuiz - Interactive Quiz Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">EduQuiz</h1>
+            <p class="tagline">Test and enhance your knowledge</p>
+        </header>
+
+        <div id="loading-screen" class="loading-screen">
+            <div class="spinner"></div>
+            <p>Loading questions...</p>
+        </div>
+
+        <div id="welcome-screen" class="welcome-screen">
+            <div class="welcome-content">
+                <h2>Welcome to EduQuiz!</h2>
+                <p>Test your knowledge with our interactive quiz. Answer questions correctly to improve your score.</p>
+                <div class="category-selector">
+                    <label for="category">Select Category:</label>
+                    <select id="category">
+                        <option value="programming">💻 Programming</option>
+                        <option value="math">🔢 Mathematics</option>
+                        <option value="science">🔬 Science</option>
+                        <option value="general">🌍 General Knowledge</option>
+                    </select>
+                </div>
+                <div class="quiz-options">
+                    <button id="start-local-quiz" class="btn btn-primary">Start Quiz (Local Questions)</button>
+                    <button id="start-api-quiz" class="btn btn-secondary">Start Quiz (Online Questions)</button>
+                </div>
+                <div class="difficulty-selector">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="quiz-screen hidden">
+
+            <div class="category-header">
+                <h3 id="category-display">💻 Coding Quiz</h3>
+            </div>
+            
+        
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="current-question">1</span> of <span id="total-questions">10</span>
+                </div>
+            </div>
+
+            
+            <div class="score-container">
+                <span class="score-label">Score: </span>
+                <span id="current-score">0</span>/<span id="max-score">0</span>
+            </div>
+
+            
+            <div class="question-container">
+                <h2 id="question-text" class="question-text"></h2>
+                <div id="options-container" class="options-container"></div>
+            </div>
+
+            
+            <div class="nav-buttons">
+                <button id="next-btn" class="btn btn-primary" disabled>Next Question</button>
+            </div>
+
+            
+            <div id="feedback" class="feedback hidden">
+                <p id="feedback-text"></p>
+            </div>
+        </div>
+
+        
+        <div id="results-screen" class="results-screen hidden">
+            <div class="results-content">
+                <h2>Quiz Complete!</h2>
+                <div class="final-score">
+                    <span class="score-number" id="final-score">0</span>
+                    <span class="score-total">/ <span id="final-total">0</span></span>
+                </div>
+                <div class="score-percentage" id="score-percentage">0%</div>
+                <div class="performance-message" id="performance-message"></div>
+                <div class="results-actions">
+                    <button id="restart-btn" class="btn btn-primary">Take Quiz Again</button>
+                    <button id="home-btn" class="btn btn-secondary">Back to Home</button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="error-screen" class="error-screen hidden">
+            <div class="error-content">
+                <h2>Oops! Something went wrong</h2>
+                <p id="error-message">Unable to load quiz questions. Please try again.</p>
+                <button id="retry-btn" class="btn btn-primary">Try Again</button>
+                <button id="use-local-btn" class="btn btn-secondary">Use Local Questions</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
